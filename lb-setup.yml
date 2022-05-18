@@ -16,7 +16,7 @@
       template:
         src: templates/haproxy.cfg.j2
         dest: /etc/haproxy/haproxy.cfg
-        notify: restart haproxy service
+      notify: restart haproxy service
     - name: Open the firewalld mariadb port
       firewalld:
         port: 80/tcp
@@ -29,15 +29,14 @@
         state: started
         enabled: yes
 
-handlers:
-
-  - name: restart firewalld service
-    service:
-      name: firewalld
-      state: restarted
-      enabled: yes
-  - name: restart haproxy service
-    service:
-      name: haproxy
-      state: restarted
-      enabled: yes
+  handlers:
+    - name: restart firewalld service
+      service:
+        name: firewalld
+        state: restarted
+        enabled: yes
+    - name: restart haproxy service
+      service:
+        name: haproxy
+        state: restarted
+        enabled: yes
