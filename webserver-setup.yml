@@ -1,5 +1,5 @@
 ---
-- hosts: servera.lab.example.com, serverd. lab.example.com, servere.lab.example.com, serverf.lab.example.com
+- hosts: SERVIDOR2, SERVIDOR3, SERVIDOR4
   name: Install the web server and start it
   become: yes
   vars:
