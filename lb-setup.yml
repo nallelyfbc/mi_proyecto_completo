@@ -1,5 +1,5 @@
 ---
-- hosts: SERVIDOR1
+- hosts: 192.168.1.152
   name: Install HAProxy load balancer and start it
   become: yes
   tasks:
