@@ -1,5 +1,5 @@
 ---
-- hosts: SERVIDOR1
+- hosts: SERVIDOR2, SERVIDOR3, SERVIDOR4
   name: Install MariaDB database server and start it
   become: yes
   tasks :
