@@ -2,10 +2,10 @@
 - hosts: SERVIDOR2, SERVIDOR3, SERVIDOR4
   name: Install MariaDB database server and start it
   become: yes
-  tasks :
+  tasks:
     - name: Install MariaDB
       package:
-        name: mariadb- server
+        name: mariadb-server
         state: installed
     - name: Start MariaDB
       service:
@@ -19,9 +19,9 @@
         state: enabled
       notify: restart firewalld service
 
-handlers:
-  - name: restart firewalld service
-    service:
-      name: firewalld
-      state: restarted
-      enabled: yes
+  handlers:
+    - name: restart firewalld service
+      service:
+        name: firewalld
+        state: restarted
+        enabled: yes
