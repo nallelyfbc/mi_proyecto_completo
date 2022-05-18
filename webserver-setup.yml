@@ -1,5 +1,5 @@
 ---
-- hosts: SERVIDOR2, SERVIDOR3, SERVIDOR4
+- hosts: 192.168.1.70, 192.168.1.76, 192.168.1.85
   name: Install the web server and start it
   become: yes
   vars:
