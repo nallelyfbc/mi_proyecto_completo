@@ -5,9 +5,9 @@
   vars:
     httpd_packages:
       - httpd
-      - mod_wsg1
-    apache_test_message: This is a test message
-    apache_max_keep_alive _requests: 115
+      - mod_wsgi
+    apache_test_message: "This is a test message"
+    apache_max_keep_alive_requests: 115
   tasks:
     - name: Install the apache web server
       yum:
@@ -19,7 +19,7 @@
     - name: Generate apache's configuration file from jinja2 template
       template:
         src: templates/httpd.conf.j2
-        dest: /etc/httpd/conf/httpd. conf
+        dest: /etc/httpd/conf/httpd.conf
       notify: restart apache service
 
     - name: Generate a basic homepage from jinja2 template
