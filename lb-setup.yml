@@ -1,5 +1,5 @@
 ---
-- hosts: serverb.lab.example.com
+- hosts: SERVIDOR2
   name: Install HAProxy load balancer and start it
   become: yes
   tasks:
