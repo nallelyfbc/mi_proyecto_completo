@@ -22,10 +22,10 @@ DocumentRoot "/var/www/html"
     DirectoryIndex index.html
 </IfModule>
 <Files ".ht*">
-    Requlre all denied
+    Require all denied
 </Files>
 ErrorLog "logs/error_log"
-MaxkeepAliveRequests {{ apache_max_ keep_alive_requests }}
+MaxkeepAliveRequests {{ apache_max_keep_alive_requests }}
 LogLevel warn
 <IfModule log_config_module>
     LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
@@ -40,7 +40,7 @@ LogLevel warn
 </IfModule>
 <Directory "/var/www/cgi-bin">
     AllowOverride None
-    options None
+    Options None
     Require all granted
 </Directory>
 <IfModule mime_module>
@@ -55,4 +55,4 @@ AddDefaultCharset UTF-8
     MIMEMagicFile conf/magic
 </IfModule>
 EnableSendfile on
-Include0ptional conf.d/*.conf
+IncludeOptional conf.d/*.conf
